@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
+</head>
+    <body>
+        <nav>
+            <a href="{% url 'djangoapp:index' %}">Home</a>
+            <a href="{% url 'djangoapp:about' %}">About</a>
+            <a href="{% url 'djangoapp:contact' %}">Contact us</a>
+        </nav>
+        <ul>
+            <li>Needs editing</li>
+            <li>Phone Number: +248 38 234</li>
+            <li>Address: Punane tee 132</li>
+        </ul>
+    </body>
+</html>

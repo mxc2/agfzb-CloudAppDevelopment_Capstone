@@ -27,7 +27,7 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["finalmxc2project12123.eu-de.cf.appdomain.cloud", "localhost", "finalmxc2project1212.eu-de.cf.appdomain.cloud/static"]
 
 
 # Application definition
