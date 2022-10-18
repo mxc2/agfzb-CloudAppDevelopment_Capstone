@@ -44,8 +44,8 @@
                         {{ review.car_make }} {{ review.car_model }} {{ review.car_year }}
                     </div>
                     <div class="card-body">
-                        <p class="card-text">{{ review.review }}</p>
                         <img src="{{MEDIA_URL}}/emoji/{{review.sentiment}}.png" class="rounded float-right col-md-4">
+                        <p class="card-text">{{ review.review }}</p>
                     </div>
                 </div>
             {% endfor %}
