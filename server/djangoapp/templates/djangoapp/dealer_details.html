@@ -40,8 +40,10 @@
         <div class="card-columns">
             {% for review in reviews %}
                 <div class="card text-dark bg-light mb-3 text-left">
-                    <div class="card-header">{{review.name}}</div>
-                    <img src="{{MEDIA_URL}}/emoji/{{review.sentiment}}.png" class="rounded float-right col-md-4">
+                    <div class="card-header">
+                        {{ review.car_make }}
+                        <img src="{{MEDIA_URL}}/emoji/{{review.sentiment}}.png" class="rounded float-right col-md-4">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ review.car_make }}, {{ review.car_model }}</h5>
                         <h5 class="card-title">{{ review.car_year }}</h5>
