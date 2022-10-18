@@ -19,18 +19,20 @@
         <!--Add a registration form here -->
         <h1>Sign Up</h1>
         <hr>
-        <form action="{% url 'djangoapp:registration' %}" method="POST">
-            <label for="username"><b>User Name</b></label>
-            <input type="text" class="form-control" name="username" placeholder="Enter User Name:" required> <br>
-            <label for="firstname"><b>First Name</b></label>
-            <input type="text" class="form-control" name="firstname" placeholder="Enter First Name:" required> <br>
-            <label for="lastname"><b>Last Name</b></label>
-            <input type="text" class="form-control" name="lastname" placeholder="Enter Last Name:" required> <br>
-            <label for="password"><b>Password</b></label>
-            <input type="password" class="form-control" name="password" placeholder="Enter Password:" required> <br>
+        <div class="container">
+            <form action="{% url 'djangoapp:registration' %}" method="POST">
+                <label for="username"><b>User Name</b></label>
+                <input type="text" class="form-control" name="username" placeholder="Enter User Name:" required> <br>
+                <label for="firstname"><b>First Name</b></label>
+                <input type="text" class="form-control" name="firstname" placeholder="Enter First Name:" required> <br>
+                <label for="lastname"><b>Last Name</b></label>
+                <input type="text" class="form-control" name="lastname" placeholder="Enter Last Name:" required> <br>
+                <label for="password"><b>Password</b></label>
+                <input type="password" class="form-control" name="password" placeholder="Enter Password:" required> <br>
 
-            {% csrf_token %}
-            <button class="btn btn-primary mt-3" type="submit">Sign Up</button>
-        </form>
+                {% csrf_token %}
+                <button class="btn btn-primary mt-3" type="submit">Sign Up</button>
+            </form>
+        </div>
     </body>
 </html>
