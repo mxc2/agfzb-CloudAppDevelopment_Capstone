@@ -8,10 +8,56 @@
 </head>
 
     <body>
-
+    
     <!--Add a nav bar here -->
+    
+    <nav class="navbar navbar-dark bg-dark">
+        <div class=" mr-auto">
+            <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Dealership Review</a>
+            <a class="ml-2" href="{% url 'djangoapp:index' %}">Home</a>
+            <a class="ml-2" href="{% url 'djangoapp:about' %}">About</a>
+            <a class="ml-2" href="{% url 'djangoapp:contact' %}">Contact us</a>
+        </div>
+        <div class="navbar-right">
+            {% if user.is_authenticated %}
+                <a class="text-primary">({{ user.username }})</a>
+                <a class="ml-2" href="{% url 'djangoapp:logout' %}">Log Out</a>
+                <a class="nav-link" href="add_review">Add review</a>
+            {% else %}
+            <form class="form-inline" action="{% url 'djangoapp:login' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" name="username" class="form-control" placeholder="Username" >
+                    <input type="password" name="password" class="form-control" placeholder="Password" >
+                    <button class="btn btn-primary" type="submit">Login</button>
+                    <a class="btn btn-link" href="{% url 'djangoapp:registration' %}">Sign Up</a>
+            </form>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Add reviews as cards -->
+        <div class="card-columns">
+            {% for review in reviews %}
+                <div class="card text-dark bg-light mb-3 text-left">
+                    <div class="card-header">{{review.name}}</div>
+                    <img src="{{MEDIA_URL}}/emoji/{{review.sentiment}}.png" class="rounded float-right col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ review.car_make }}, {{ review.car_model }}</h5>
+                        <h5 class="card-title">{{ review.car_year }}</h5>
+                        <p class="card-text">{{ review.review }}</p>
+                    </div>
+                </div>
+            {% endfor %}
 
-    <!-- Add reviews as cards -->
+        </div>
+        
+        <div>
+            {% if reviews|length == 0 %}
+                <h1 class="text-center"><b>This dealership has not yet been reviewed. Want to add one?</b></h1>
+            {% endif %}
+        </div>
+    </div>
 
     </body>
 
