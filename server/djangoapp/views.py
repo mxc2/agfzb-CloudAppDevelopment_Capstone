@@ -36,6 +36,9 @@ def login_request(request):
         user = authenticate(username=username, password=password) # Let's authenticate
         if user is not None:
             login(request, user) # Log In :)
+            return render(request, 'djangoapp/index.html', context)
+        else:
+            return render(request, 'djangoapp/index.html', context)
     return render(request, 'djangoapp/index.html', context) # Return to home page
 
 # Create a `logout_request` view to handle sign out request
